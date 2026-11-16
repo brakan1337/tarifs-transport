@@ -1,0 +1,143 @@
+:root {
+  --fond: #f5f6f8;
+  --surface: #ffffff;
+  --bordure: #dfe3e8;
+  --texte: #1c2430;
+  --texte-doux: #5b6675;
+  --accent: #1f5fbf;
+  --accent-leger: #e6eefa;
+  --succes: #1d7a46;
+  --erreur: #b3261e;
+  --erreur-fond: #fdecea;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  background: var(--fond);
+  color: var(--texte);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+}
+
+.sous-titre {
+  margin: 0 0 24px;
+  color: var(--texte-doux);
+}
+
+.carte {
+  background: var(--surface);
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+  color: inherit;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input[type='checkbox'] {
+  width: auto;
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border-color: var(--erreur);
+}
+
+.erreur-champ {
+  color: var(--erreur);
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+
+.alerte {
+  background: var(--erreur-fond);
+  color: var(--erreur);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button.secondaire {
+  background: #fff;
+  color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+th {
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+  font-weight: 600;
+}
+
+.nombre {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.defilement {
+  overflow-x: auto;
+}
