@@ -1,0 +1,23 @@
+# docker compose up --build  puis  http://localhost:8080
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: tarifs
+      POSTGRES_USER: tarifs
+      POSTGRES_PASSWORD: tarifs
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tarifs -d tarifs"]
+      interval: 3s
+      retries: 20
+
+  app:
+    build: .
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      DB_URL: jdbc:postgresql://db:5432/tarifs
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
